@@ -1,4 +1,5 @@
-# Workle - __a simple webapp to manage orders__
+# Workle
+_a simple webapp to manage orders_
 
 ## Requirements: 
 Company needs an app that can track orders, including details, customer information, and workflow progress
@@ -15,4 +16,4 @@ Company needs an app that can track orders, including details, customer informat
 - Process auto-documents
 
 ## UI/UX:
-Boostrap
+- Boostrap
