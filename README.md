@@ -8,6 +8,7 @@ Company needs an app that can track orders, including details, customer informat
 - Order -> 
 - User -> devise for authentication
 - AdminUser -> superuser privileges for organizations
+- Customer -> user has many customers through orders
 
 ## Features:
 - Processing workflow for orders
