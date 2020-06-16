@@ -1,0 +1,28 @@
+<div class='logo'>
+  <%= image_tag 'logo.png', size: '250x63' %>
+</div>
+
+<ul class="custom-nav nav nav-tabs">
+  <li class="<%= active?(root_path) %>">
+    <%= link_to "Home", root_path %>
+  </li>
+  <li class="<%= active?(orders_path) %>">
+    <%= link_to "Orders", orders_path %>
+  </li>
+  <li class="nav-item dropdown pull-right">
+      <a href-"#" data-toggle="dropdown" class="dropdown-toggle">Account<strong class="caret"></strong></a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to "Account Settings", edit_user_registration_path %>
+        </li>
+        <li>
+          <a href="#">Another Action</a>
+        </li>
+        <li class="divider">
+        </li>
+        <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+  </li>
+</ul>
