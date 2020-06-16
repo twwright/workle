@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe Order, type: :model do
   describe 'creating an order' do
     before do
-      @order = Order.create(date: Date.today, details: "Things we need to do")
+      user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
+        binding.pry
+      login_as(user, :scope => :user)
+      @order = Order.create(date: Date.today, details: "Things we need to do", user_id: user.id)
     end
 
     it 'can be created' do

@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     if @order.save
-      redirect_to @order, notice: 'Your order was saved successfully.'
+      redirect_to order_path(@order), notice: 'Your order was saved successfully.'
     else
       render :new 
     end
