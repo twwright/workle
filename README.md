@@ -1,5 +1,8 @@
-# Workle
-_a simple webapp to manage orders_
+<img src="app/assets/images/logo.png" alt="Workle logo" style="width:500px;"/>
+
+_a simple webapp to manage your workplace_
+
+---
 
 ## Requirements: 
 Company needs an app that can track orders, including details, customer information, and workflow progress
