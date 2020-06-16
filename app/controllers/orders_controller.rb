@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :destroy]
+  before_action :set_order, only: [:show]
 
   def index
+    @orders = Order.all # orders_by(current_user).page(params[:page]).per(10)
   end
 
   def new
@@ -10,6 +11,7 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
     if @order.save
       redirect_to @order, notice: 'Your order was saved successfully.'
     else
