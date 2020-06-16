@@ -1,9 +1,9 @@
-@user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Elon", last_name: "Musk")
+@user = User.create(email: "seed@seed.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Nikolai", last_name: "Tesla")
 
-puts "test@test.com with password asdfasdf set up successfully"
+puts "seed@seed.com with password 'asdfasdf' set up successfully"
 
-15.times do |order|
-  Order.create!(date: "2020-06-09", details: "#{details} detail content", user_id: @user)
+25.times do |order|
+  Order.create!(date: Date.today, details: "#{order} detail content", user_id: @user)
 end
 
-puts "15 seed orders have been created successfully!"
+puts "25 seed orders have been created successfully!"
