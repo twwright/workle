@@ -17,21 +17,6 @@
     </tr>
   </thead>
   <tbody>
-  <% @orders.each do |o| %>
-    <tr>
-      <td>
-        <%= o.id %>
-      </td>
-      <td>
-        <%= o.date %>
-      </td>
-      <td>
-        <%= o.user.last_name %>
-      </td>
-      <td>
-        <%= o.details %>
-      </td>
-    </tr>
-    <% end %>
+    <%= render @orders %>
   </tbody>
 </table>

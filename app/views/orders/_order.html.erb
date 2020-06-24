@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <%= order.id %>
+  </td>
+  <td>
+    <%= order.date %>
+  </td>
+  <td>
+    <%= order.user.last_name %>
+  </td>
+  <td>
+    <%= truncate(order.details) %> # Adds ellipses to long text
+  </td>
+</tr>
