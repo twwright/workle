@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Order, type: :model do
+  before do
+    user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
+    login_as(user, :scope => :user)
+    @order = Order.create(date: Date.today, details: "Things we need to do", user_id: user.id)
+  end
+
   describe 'creating an order' do
-    before do
-      user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
-        binding.pry
-      login_as(user, :scope => :user)
-      @order = Order.create(date: Date.today, details: "Things we need to do", user_id: user.id)
-    end
 
     it 'can be created' do
       expect(@order).to be_valid
@@ -19,4 +19,5 @@ RSpec.describe Order, type: :model do
       expect(@order).to_not be_valid
     end
   end
+
 end
