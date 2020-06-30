@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'navigate' do
   before do
-    user = User.create(email: "test@test.com", password: "asdfasdf", password_confirmation: "asdfasdf", first_name: "Jon", last_name: "Snow")
-    login_as(user, :scope => :user)
+    @user = FactoryBot.create(:user)
+    login_as @user, scope: :user
   end
 
   describe 'index' do
@@ -19,12 +19,13 @@ describe 'navigate' do
   		expect(page).to have_content(/Orders/)
   	end
 
-    it 'has a list of orders' do
-      orderone = Order.create(date: Date.today, details: "Order 1", user_id: User.last.id)
-      ordertwo = Order.create(date: Date.today, details: "Order 2", user_id: User.last.id)
-      visit orders_path
-      expect(page).to have_content(/Order 1/)
-    end
+    # it 'has a list of orders' do
+    #   order1 = FactoryBot.build_stubbed(:order)
+    #   order2 = FactoryBot.build_stubbed(:another_order)
+    #   visit orders_path
+    #   save_and_open_page
+    #   expect(page).to have_content(/Stuff/)
+    # end
   end
 
   describe 'creation' do
